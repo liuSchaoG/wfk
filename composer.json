@@ -1,0 +1,28 @@
+
+{
+	"name": "WFK PHP",
+	"description":"PHP Framework",
+	"type":"Framework",
+	"keyword":[
+		"php","php Framework"
+	],
+	"require":{
+		"php" :">= 5.3.0",
+		"filp/whoops":"*",
+		"catfan/medoo":"*",
+		"twig/twig":"*",
+		"nesbot/Carbon": "*",
+		"symfony/var-dumper":"*"
+	},
+	"repositories":{
+	    "packagist": {
+	        "type": "composer",
+	        "url": "https://packagist.phpcomposer.com"
+	    }
+	}
+
+}
+
+
+
+
