@@ -13,10 +13,14 @@ class wfk
 	public static $classMap = [];
 	public $assgin;
 	public $name;
+	/**
+	 * [run description]
+	 * @author liuchao 2017-10-29T18:56:56+0800
+	 * @return [type] [description]
+	 */
 	static public function run()
 	{
 		$route = new \core\lib\route();
-
 		$module = $route -> contro;
 		$action = $route -> action;
 		$module_path = APP.'/controller/'.$module.'Controller.php';
@@ -30,6 +34,12 @@ class wfk
 		}
 	}
 
+	/**
+	 * [load description]
+	 * @author liuchao 2017-10-29T18:56:45+0800
+	 * @param  [type] $class [description]
+	 * @return [type]        [description]
+	 */
 	static public function load($class)
 	{
 		# 自动加载类库
@@ -64,18 +74,13 @@ class wfk
 	 * @param  string $value [description]
 	 * @return [type]        [description]
 	 */
-	public function display($file='')
+	public function display($file='index')
 	{
 		
 		$class_name = $this -> getClassName();
 
-		// $action_name = parent; //-> getActionName();
-		// dump($action_name);die;
-		if($file===''){
-			$file = $action_name;
-		}
-
 		$path_file = APP.'/view/'.$class_name.'/'.$file.'.html';
+		// $path_file = APP.'/view/'.$file.'.html';
 		
 		if(is_file($path_file)){
 
@@ -112,15 +117,15 @@ class wfk
         return substr(get_class($this),15,-10);
     }
 
-    /**
-     * 获取当前 action 名字
-     * @author liuchao 2017-10-16T22:13:10+0800
-     * @return [type] [description]
-     */
-    protected function getActionName()
-    {
-    	return get_class_methods($this);
-    }
+ //    /**
+ //     * 获取当前 action 名字
+ //     * @author liuchao 2017-10-16T22:13:10+0800
+ //     * @return [type] [description]
+ //     */
+ //    protected function getActionName()
+ //    {
+ //    	return get_class_methods($this);
+ //    }
 
 }
 

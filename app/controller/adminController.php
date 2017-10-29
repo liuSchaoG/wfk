@@ -26,7 +26,7 @@ class adminController extends wfk
 		// 调用模型类
 		$result = new model();
 
-		$officialDate = Carbon::now();
+		// $officialDate = Carbon::now();
 
 		// dump($officialDate);
 		// dp($result -> select("users", "*"));

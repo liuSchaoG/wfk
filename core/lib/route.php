@@ -10,18 +10,23 @@ class route
 	public $contro;
 	public $action;
 
-	//隐藏index.php
-	//获取url 参数部分
-	//返回对应控制器和方法
+	
+	/**
+	 * 隐藏index.php
+	 * 获取url 参数部分
+	 * 返回对应控制器和方法
+	 * @author liuchao 2017-10-29T18:56:17+0800
+	 */
 	function __construct()
 	{
 		if(isset($_SERVER['REQUEST_URI'])&&($_SERVER['REQUEST_URI']!='/')){
+
 			$array = explode('/',trim($_SERVER['REQUEST_URI'],'/'));
-			if($array[0]){
+			if(isset($array[0])){
 				$this -> contro =$array[0];
 				unset($array[0]);
 			}
-			if($array[1]){
+			if(isset($array[1])){
 				$this -> action = $array[1];
 			}else{
 				$this -> action = conf::get('ACTION','route');
