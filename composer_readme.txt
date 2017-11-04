@@ -4,3 +4,4 @@
 "twig/twig":"*",//模板引擎
 "nesbot/Carbon": "*",//时间处理类
 "symfony/var-dumper":"*"//酷炫打印调试效果
+"kphcdr/crypt": "^1.0" // 加密解密类
